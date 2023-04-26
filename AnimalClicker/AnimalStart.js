@@ -26,14 +26,16 @@ function Animal({name}) {
         <Text></Text>
         <Text style={styles.centerer}> {nickname} </Text>
         <Text></Text>
-        <Text style={styles.centerer}> Points: {count} </Text>
+        <Text style={styles.centerer}> Points:</Text>
+        <Text style={styles.pointsCenterer}> {count} </Text>
         <Text></Text>
 
         <TouchableOpacity style={styles.button} onPress={()=> {
           setCount(count+1);
         }} >
-        <View style={styles.border}>    
-        <Text style={styles.centerer}>CLICK HERE FOR POINTS</Text>      
+        <View>
+        {/* <View style={styles.border}>     */}
+        <Text style={styles.buttonCenterer}>CLICK HERE FOR POINTS</Text>      
         </View>
         </TouchableOpacity>
 
@@ -54,22 +56,38 @@ export default function Start() {
 const styles = StyleSheet.create({
     item: {
       alignSelf: 'center',
-      margin: 15,
+      padding: 10,
     },
     centerer: {
       alignSelf: 'center',
-      fontSize: 18,
+      fontSize: 20,
       fontWeight: 'bold',
+    },
+    pointsCenterer: {
+      alignSelf: 'center',
+      fontSize: 35,
+      fontWeight: 'bold',
+      color: 'red',
+    },
+    buttonCenterer: {
+      alignSelf: 'center',
+      fontSize: 20,
+      fontWeight: 'bold',
+      color: 'white',
     },
     Pic: {
       alignSelf: 'center',
-      width: 200, 
-      height: 200 
+      width: 250, 
+      height: 250,
+      margin: 40,
+
     },
     button: {
       alignItems: 'center',
-      backgroundColor: '#DDDDDD',
-      padding: 10,
+      backgroundColor: 'green',
+      padding: 30,
+      borderRadius: 50,
+
     },
     border: {
       borderWidth: 5,
