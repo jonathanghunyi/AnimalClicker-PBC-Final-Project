@@ -19,9 +19,9 @@ export default function ListOfAnimals({ navigation }){
     }}>
     <View style={styles.container}>
       
-      {/* <TouchableOpacity onPress={goHome}>
+       <TouchableOpacity onPress={goHome}>
         <Text style = {styles.homeSty}>{Home}</Text>
-      </TouchableOpacity> */}
+      </TouchableOpacity> 
       
       
       <FlatList
