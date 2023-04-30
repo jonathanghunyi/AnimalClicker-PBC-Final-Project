@@ -4,13 +4,16 @@ import { Text, View, Image, Button, TextInput, ScrollView, StyleSheet, Touchable
 function Animal({name}) { 
   const [nickname, setNickname] = useState("");
   const [count, setCount] = useState(0);
+  const [nametag, setNametag] = useState(styles.nametag1);
+
+  a = 'https://img.freepik.com/free-vector/kangaroo-cartoon-character-isolated_1308-112703.jpg'
 
   return (
     <ScrollView style={styles.item}>
                
         <Image style={styles.Pic}
           source={{
-            uri: 'https://img.freepik.com/free-vector/kangaroo-cartoon-character-isolated_1308-112703.jpg',
+           uri: a,
           }}
         />
         <Text></Text>
@@ -24,7 +27,7 @@ function Animal({name}) {
           onSubmitEditing={(event) => setNickname(event.nativeEvent.text)} 
           /> 
         <Text></Text>
-        <Text style={styles.centerer}> {nickname} </Text>
+        <Text style={nametag}> {nickname} </Text>
         <Text></Text>
         <Text style={styles.centerer}> Points:</Text>
         <Text style={styles.pointsCenterer}> {count} </Text>
@@ -38,6 +41,22 @@ function Animal({name}) {
         <Text style={styles.buttonCenterer}>CLICK HERE FOR POINTS</Text>      
         </View>
         </TouchableOpacity>
+        <Text></Text> 
+        
+{/* second button*/}
+        <TouchableOpacity style={styles.button2} onPress={()=> {
+          if (count>=10) {
+            setCount(count-10);
+            setNametag(styles.nametag2)
+          }
+          
+        }} >
+        <View>
+        {/* <View style={styles.border}>     */}
+        <Text style={styles.buttonCenterer}> -10 Fancy Nametag </Text>      
+        </View>
+        </TouchableOpacity>
+
 
     </ScrollView>
   );
@@ -77,7 +96,7 @@ const styles = StyleSheet.create({
     },
     Pic: {
       alignSelf: 'center',
-      width: 250, 
+      width: 270, 
       height: 250,
       margin: 40,
 
@@ -89,10 +108,33 @@ const styles = StyleSheet.create({
       borderRadius: 50,
 
     },
+    button2: {
+      alignItems: 'center',
+      backgroundColor: 'blue',
+      padding: 30,
+      borderRadius: 40,
+
+    },
     border: {
       borderWidth: 5,
       padding: 10,
       borderColor: 'blue',
       alignSelf: 'center',
     }, 
+
+    nametag1: {
+      alignSelf: 'center',
+      fontSize: 30,
+      fontWeight: 'bold',
+      fontFamily: 'Futura', // original nametag
+
+    },
+    nametag2: {
+      alignSelf: 'center',
+      fontSize: 30,
+      fontWeight: 'bold',
+      fontFamily: 'Zapfino',
+      
+    },
+    
 });
