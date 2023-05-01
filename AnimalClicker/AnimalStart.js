@@ -87,8 +87,7 @@ function Animal({name}) {
   );
 }
 
-/* Cafe is the parent component we will call in App.js
-   Cat is considered a child component */
+
 export default function Start() {  
   return (
     <View>   

@@ -6,8 +6,8 @@ import AnimalList from './AnimalList';
     //figure out how to wrap the text
     const dataSource = [
         {  animalName: "Kangaroo", animalDescription: "Pick me.", animalDest:'AnimalStart'},
-        { animalName: "Hippo", animalDescription: "Pick me.", animalDest:""},
-        { animalName: "Zebra", animalDescription: "Pick me.", animalDest:"AnimalStart"},
+        { animalName: "Hippo", animalDescription: "Pick me.", animalDest:"hippo"},
+        { animalName: "Zebra", animalDescription: "Pick me.", animalDest:"zebra"},
       ];
       
       const onPress = (destination) =>navigation.navigate(destination);
