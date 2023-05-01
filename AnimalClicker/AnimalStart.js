@@ -2,9 +2,12 @@ import { useState } from 'react';
 import { Text, View, Image, Button, TextInput, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
 function Animal({name}) { 
-  const [nickname, setNickname] = useState("");
+  const [nickname, setNickname] = useState("Name Me!");
   const [count, setCount] = useState(0);
+  const [hunger, setHunger] = useState("");
   const [nametag, setNametag] = useState(styles.nametag1);
+  const [b2, setB2] = useState(0);
+  const [b3, setB3] = useState(0);
 
   a = 'https://img.freepik.com/free-vector/kangaroo-cartoon-character-isolated_1308-112703.jpg'
 
@@ -16,8 +19,7 @@ function Animal({name}) {
            uri: a,
           }}
         />
-        <Text></Text>
-        <Text style={styles.centerer}>Hello, I am your animal!</Text>
+        <Text style={styles.centerer}>{hunger}</Text>
         <Text></Text>
       <TextInput
           style={{height: 40,
@@ -45,9 +47,10 @@ function Animal({name}) {
         
 {/* second button*/}
         <TouchableOpacity style={styles.button2} onPress={()=> {
-          if (count>=10) {
+          if (count>=10 && b2==0) {
             setCount(count-10);
             setNametag(styles.nametag2)
+            setB2(1)
           }
           
         }} >
@@ -56,6 +59,28 @@ function Animal({name}) {
         <Text style={styles.buttonCenterer}> -10 Fancy Nametag </Text>      
         </View>
         </TouchableOpacity>
+        <Text></Text>
+
+{/* third button*/}
+<TouchableOpacity style={styles.button2} onPress={()=> {
+          if (count>=15 && b3==0) {
+            setCount(count-15);
+            setHunger("mmmm, tasty!")
+            setB3(1)
+          }
+          if (count>=15 && b3==1) {
+            setCount(count-15);
+            setHunger("I'm full!")
+            setB3(2)
+          }
+          
+        }} >
+        <View>
+        {/* <View style={styles.border}>     */}
+        <Text style={styles.buttonCenterer}> -15 Feed Me </Text>      
+        </View>
+        </TouchableOpacity>
+        <Text></Text>
 
 
     </ScrollView>
@@ -97,7 +122,7 @@ const styles = StyleSheet.create({
     Pic: {
       alignSelf: 'center',
       width: 270, 
-      height: 250,
+      height: 240,
       margin: 40,
 
     },
