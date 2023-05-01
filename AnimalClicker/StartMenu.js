@@ -1,25 +1,14 @@
-import { StyleSheet, Text, View, FlatList, Button, TouchableOpacity, ScrollView } from 'react-native';
-import Animal from "./AnimalStart"
-import AnimalList from './AnimalList';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity} from 'react-native';
 
  export default function StartMenu({ navigation }){
-    //figure out how to wrap the text
     const dataSource = [
-        {  animalName: "Kangaroo", animalDescription: "Pick me.", animalDest:'AnimalStart'},
-        { animalName: "Hippo", animalDescription: "Pick me.", animalDest:"hippo"},
-        { animalName: "Zebra", animalDescription: "Pick me.", animalDest:"zebra"},
+        {  animalName: "Kangaroo", animalDescription: "Pick me!", animalDest:'kangaroo'},
+        { animalName: "Hippo", animalDescription: "Pick me!", animalDest:"hippo"},
+        { animalName: "Zebra", animalDescription: "Pick me!", animalDest:"zebra"},
       ];
       
       const onPress = (destination) =>navigation.navigate(destination);
     
-      
-
-        
-  
-
-        
-      
-      
       
   return (
     
@@ -51,7 +40,7 @@ const styles = StyleSheet.create({
      backgroundColor: "#6495ED"
     },
     title:{
-      padding: 10,
+      padding: 5,
       fontSize: 30,
       height: 44,
       color: "#98ff98",

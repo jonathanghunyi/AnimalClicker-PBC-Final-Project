@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { Text, View, Image, Button, TextInput, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
-function Animal({name}) { 
+function Kangaroo({name}) { 
   const [nickname, setNickname] = useState("Name Me!");
   const [count, setCount] = useState(0);
   const [hunger, setHunger] = useState("");
   const [nametag, setNametag] = useState(styles.nametag1);
   const [b2, setB2] = useState(0);
   const [b3, setB3] = useState(0);
-
+  
   a = 'https://img.freepik.com/free-vector/kangaroo-cartoon-character-isolated_1308-112703.jpg'
 
   return (
@@ -39,7 +39,6 @@ function Animal({name}) {
           setCount(count+1);
         }} >
         <View>
-        {/* <View style={styles.border}>     */}
         <Text style={styles.buttonCenterer}>CLICK HERE FOR POINTS</Text>      
         </View>
         </TouchableOpacity>
@@ -55,7 +54,6 @@ function Animal({name}) {
           
         }} >
         <View>
-        {/* <View style={styles.border}>     */}
         <Text style={styles.buttonCenterer}> -10 Fancy Nametag </Text>      
         </View>
         </TouchableOpacity>
@@ -76,7 +74,6 @@ function Animal({name}) {
           
         }} >
         <View>
-        {/* <View style={styles.border}>     */}
         <Text style={styles.buttonCenterer}> -15 Feed Me </Text>      
         </View>
         </TouchableOpacity>
@@ -91,7 +88,7 @@ function Animal({name}) {
 export default function Start() {  
   return (
     <View>   
-      <Animal name="" />    
+      <Kangaroo name="" />    
     </View>
   );
 }

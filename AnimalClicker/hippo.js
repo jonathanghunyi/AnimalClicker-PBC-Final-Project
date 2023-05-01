@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Text, View, Image, Button, TextInput, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, Image, TextInput, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
 function Hippo({name}) { 
   const [nickname, setNickname] = useState("Name Me!");
@@ -39,7 +39,6 @@ function Hippo({name}) {
           setCount(count+1);
         }} >
         <View>
-        {/* <View style={styles.border}>     */}
         <Text style={styles.buttonCenterer}>CLICK HERE FOR POINTS</Text>      
         </View>
         </TouchableOpacity>
@@ -55,7 +54,6 @@ function Hippo({name}) {
           
         }} >
         <View>
-        {/* <View style={styles.border}>     */}
         <Text style={styles.buttonCenterer}> -10 Fancy Nametag </Text>      
         </View>
         </TouchableOpacity>
@@ -76,7 +74,6 @@ function Hippo({name}) {
           
         }} >
         <View>
-        {/* <View style={styles.border}>     */}
         <Text style={styles.buttonCenterer}> -15 Feed Me </Text>      
         </View>
         </TouchableOpacity>
@@ -91,7 +88,7 @@ function Hippo({name}) {
 export default function Start() {  
   return (
     <View>   
-      <Hippo /> 
+      <Hippo name="" /> 
     </View>
   );
 }
