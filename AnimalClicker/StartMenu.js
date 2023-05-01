@@ -1,33 +1,34 @@
 import { StyleSheet, Text, View, FlatList, Button, TouchableOpacity, ScrollView } from 'react-native';
+import Animal from "./AnimalStart"
+import AnimalList from './AnimalList';
 
-export default function ListOfAnimals({ navigation }){
+ export default function StartMenu({ navigation }){
     //figure out how to wrap the text
     const dataSource = [
-        {  animalName: "Kangaroo", animalDescription: "Pick me."},
-        { animalName: "Hippo", animalDescription: "Pick me."},
-        { animalName: "Zebra", animalDescription: "Pick me."},
+        {  animalName: "Kangaroo", animalDescription: "Pick me.", animalDest:'AnimalStart'},
+        { animalName: "Hippo", animalDescription: "Pick me.", animalDest:""},
+        { animalName: "Zebra", animalDescription: "Pick me.", animalDest:"AnimalStart"},
       ];
-      const onPress = () =>navigation.navigate('AnimalStart');
+      
+      const onPress = (destination) =>navigation.navigate(destination);
+    
+      
+
+        
+  
+
+        
+      
+      
       
   return (
-    <ScrollView horizontal
-    showsVerticalScrollIndicator={false}
-    showsHorizontalScrollIndicator={false}
-    contentContainerStyle={{
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-    }}>
+    
     <View style={styles.container}>
-      
-       <TouchableOpacity onPress={goHome}>
-        <Text style = {styles.homeSty}>{Home}</Text>
-      </TouchableOpacity> 
-      
-      
+    
       <FlatList
-        data={dataSource.carouselItems}
+        data={dataSource}
         renderItem={({item}) =>
-        <TouchableOpacity onPress={onPress}>
+        <TouchableOpacity onPress={()=> onPress(item.animalDest)}>
         <View style={styles.border}>
         <Text style={styles.title}>{item.animalName} </Text>
         <Text style={styles.item}>{item.animalDescription} </Text>
@@ -37,37 +38,43 @@ export default function ListOfAnimals({ navigation }){
         }
       />
     </View>
-    </ScrollView>
+    
   );
+      
       }
+      
 
 const styles = StyleSheet.create({
     container: {
      flex: 1,
-     paddingTop: 50
+     paddingTop: 50,
+     backgroundColor: "#6495ED"
     },
     title:{
       padding: 10,
-      fontSize: 25,
+      fontSize: 30,
       height: 44,
-      color: "blue",
-      fontWeight: "bold"
+      color: "#98ff98",
+      fontWeight: "bold",
+      textDecorationLine: 'underline',
+      textAlign: "center",
     },
     item: {
       padding: 10,
-      fontSize: 18,
+      fontSize: 30,
       height: 44,
+      textAlign: "center",
       
     },
     homeSty: {
       padding: 10,
       fontSize: 18,
-      height: 44,
+      height: 50,
       textAlign: "center",
     },
     
     border:{
-      borderWidth: 1,
-      borderColor: 'yellow',
+      borderWidth: 5,
+      borderColor: 'white',
     }
   });  

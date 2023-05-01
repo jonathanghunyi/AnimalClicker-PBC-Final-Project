@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import Start from './AnimalStart';
-import ListOfAnimals from './AnimalList';
+import StartMenu from './StartMenu';
 import React, { useState } from "react";
 import {StyleSheet,Text,View,Image,TextInput,TouchableOpacity,Linking,Button} from 'react-native';   
 import { useNavigation } from '@react-navigation/native';
@@ -13,12 +13,18 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <Animal />
-   // <NavigationContainer>
-   // <Stack.Navigator initialRouteName='AnimalList'>
-  //  <Stack.Screen name='AnimalList' component={AnimalList} />
-  //    </Stack.Navigator>
-  //</NavigationContainer>
+    // <Animal />
+   <NavigationContainer>
+  
+    <Stack.Navigator initialRouteName = "StartMenu" >
+  {/* <Stack.Screen name='AnimalList' component={AnimalList} /> */}
+  <Stack.Screen name = "StartMenu" component = {StartMenu} />
+  <Stack.Screen name = "AnimalStart" component = {Animal} />
+  {/* <Stack.Screen name = "AnimalList" component = {AnimalList} /> */}
+  </Stack.Navigator>
+  {/* <ListOfAnimals /> */}
+  </NavigationContainer>
+  
   );
 }
 
