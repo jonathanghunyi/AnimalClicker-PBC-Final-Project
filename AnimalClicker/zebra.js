@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { Text, View, Image, TextInput, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
+// import { firestore } from "./firebase";
+// import nickname from './nickname';
+// import { addDoc, collection } from "@firebase/firestore";
+
 function Zebra({name}) { 
   const [nickname, setNickname] = useState("Name Me!");
   const [count, setCount] = useState(0);
